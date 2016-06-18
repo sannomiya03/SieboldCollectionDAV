@@ -1,0 +1,16 @@
+<header layout="row" layout-align="space-between">
+	<h1 id="logo">Inspiration.io</h1>
+	<div id="primaryNav">
+		<nav>
+			<ul layout="row" layout-align="space-around">
+				<li ng-class="{active:headerCtrl.currentPage=='explore'||headerCtrl.currentPage==''}" ><a ng-href="{{headerCtrl.url}}/#/explore">Explore</a></li>
+				<li ng-class="{active:headerCtrl.currentPage=='upload'}" ><a ng-href="{{headerCtrl.url}}/#/upload">Upload</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="secondaryNav">
+		<ul layout="row" layout-align="space-around">
+			<li><a href="remote.html">Remote</a></li>
+		</ul>
+	</div>
+</header>

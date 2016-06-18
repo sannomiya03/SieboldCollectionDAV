@@ -1,0 +1,26 @@
+<div class="tag" ng-controller="ModalTagsController as mTagCtrl">
+	<h4 class="label">Tags</h4>
+	<md-chips
+		class="chips"
+		ng-class="{editting: modalCtrl.editting}"
+		ng-model="modal.item.tags"
+		md-on-add = "modalCtrl.addTerm('Tag', $chip, modal.item)"
+		md-on-remove = "modalCtrl.removeTerm('Tag', $chip, modal.item)"
+		readonly="!modalCtrl.editting"
+		placeholder="Enter a tag"
+		secondary-placeholder="+Tag"
+		md-autocomplete-snap
+		md-transform-chip="mTagCtrl.transformChip($chip)">
+
+		<md-autocomplete
+			md-search-text="mTagCtrl.searchText"
+			md-items="item in mTagCtrl.querySearch(mTagCtrl.items, mTagCtrl.searchText)"
+			md-item-text="item.name"
+			md-min-length="0"
+			placeholder="{{::mTagCtrl.placeholder}}">
+			<span md-highlight-text="mTagCtrl.searchText">{{item.name}}</span>
+		</md-autocomplete>
+
+		<md-chip-template class="chip" ng-click="modalCtrl.chipSelect('Tag', $chip)">{{($chip.name || $chip)}}</md-chip-template>
+	</md-chips>
+</div>

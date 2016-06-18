@@ -1,0 +1,9 @@
+<div layout="row" layout-align="center end" ng-controller="LayoutController as layoutCtrl">
+	<div
+		class="stateBtn"
+		ng-repeat="state in layoutCtrl.LayoutState.states"
+		ng-class="{active: state.active}"
+		ng-click="layoutCtrl.LayoutState.changeLayout(state)">
+		{{state.label}}
+	</div>
+</div>

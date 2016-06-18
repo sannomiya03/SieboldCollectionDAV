@@ -1,0 +1,10 @@
+<div class="title">
+	<h2 ng-show="modal.item.resource=='web'">
+		<small>via <a href="modal.item.site_url">{{modal.item.site_name}}</a></small>
+		<br><a href="modal.item.article_url">{{modal.item.article_name}}</a>
+	</h2>
+	<h2 ng-show="modal.item.resource=='local'">
+		<small>ICI's Photo</small>
+		<br>{{modal.item.name}}
+	</h2>
+</div>

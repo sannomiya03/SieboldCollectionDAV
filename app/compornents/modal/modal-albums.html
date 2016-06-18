@@ -1,0 +1,26 @@
+<div class="album" ng-controller="ModalAlbumsController as mAlbumCtrl">
+	<h4 class="label">Albums</h4>
+	<md-chips
+		class="chips"
+		ng-class="{editting: modalCtrl.editting}"
+		ng-model="modal.item.albums"
+		md-on-add = "modalCtrl.addTerm('Album', $chip, modal.item)"
+		md-on-remove = "modalCtrl.removeTerm('Album', $chip, modal.item)"
+		readonly="!modalCtrl.editting"
+		placeholder="Enter a Album"
+		secondary-placeholder="+Album"
+		md-autocomplete-snap
+		md-transform-chip="mAlbumCtrl.transformChip($chip)">
+
+		<md-autocomplete
+			md-search-text="mAlbumCtrl.searchText"
+			md-items="item in mAlbumCtrl.querySearch(mAlbumCtrl.items, mAlbumCtrl.searchText)"
+			md-item-text="item.name"
+			md-min-length="0"
+			placeholder="{{::mAlbumCtrl.placeholder}}">
+			<span md-highlight-text="mAlbumCtrl.searchText">{{item.name}}</span>
+		</md-autocomplete>
+
+		<md-chip-template class="chip" ng-click="modalCtrl.chipSelect('Album', $chip)"> {{($chip.name || $chip)}}</md-chip-template>
+	</md-chips>
+</div>

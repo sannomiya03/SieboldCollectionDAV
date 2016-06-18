@@ -1,0 +1,52 @@
+<div id="items">
+	<div id="items-meta" layout="row" layout-align="space-between end">
+		<div>
+			<h4 id="" style="margin-bottom:2em;">検索結果 {{itemCtrl.ItemState.itemSize}}件</h4>
+		</div>
+	</div>
+
+	<div id="item-list" layout="row" layout-wrap>
+		<table class="table">
+			<thead class="thead-inverse">
+				<tr>
+					<th></th>
+					<th>識別番号</th>
+					<th>プロジェクト番号</th>
+					<th>S番号</th>
+					<th>資料名称</th>
+					<th>時代</th>
+					<th>地域</th>
+					<th>資料種別</th>
+					<th>技法</th>
+					<th>文様</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					id="{{item.id}}"
+					class="item"
+					ng-repeat="item in itemCtrl.getItems()"
+					flex="10"
+					>
+					<td width="150px"><img ng-src="./../siebold/images/100/SMV-S{{item.s_no+item.branch_no}}/0.jpg" alt=""></td>
+					<th scope="row" width="100px">{{item.id}}</th>
+					<td width="150px">{{item.project_id}}</td>
+					<td width="100px">{{item.s_no}} {{item.branch_no}}</td>
+					<td width="300px">{{item.name}}</td>
+					<td width="100px">{{item.age}}, {{item.century}}世紀, {{item.calender_ja}}</td>
+					<td width="100px">{{item.space}}</td>
+					<td width="200px"><span ng-repeat="type in item.document_type" ng-click="itemCtrl.search(type,'資料種別')">{{type}},</span></td>
+					<td min-width="100px"><span ng-repeat="type in item.technique" ng-click="itemCtrl.search(type,'技法')">{{type}},</span> </td>
+					<td min-width="100px"><span ng-repeat="type in item.pattern" ng-click="itemCtrl.search(type,'文様')">{{type}},</span> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="loader" ng-show="itemCtrl.ItemState.useLoad" when-scrolled>
+		<p ng-click="itemCtrl.loadItems()" ng-hide="itemCtrl.loading"></p>
+		<md-progress-circular
+			id="progress"
+			md-diameter="80"
+			></md-progress-circular>
+	</div>
+</div>

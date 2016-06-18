@@ -1,0 +1,126 @@
+@import "color";
+@import "general";
+@import "mixins";
+@import "vars";
+
+html,body{
+	background-color: $White;
+}
+
+#app{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+
+	#whole, #detail{
+		width: 100%;
+		height: 100%;
+	}
+
+	#heading{
+		width: 100%;
+		height: 10%;
+		padding: 0 $common-padding-desktop-HD;
+	}
+	#main-content{
+		width: 100%;
+		height: 80%;
+		overflow: hidden;
+		padding: 10px;
+	}
+	#sub-content{
+		width: 100%;
+		height: 10%;
+		padding: 0 $common-padding-desktop-HD;
+	}
+}
+
+#whole{
+}
+
+#detail{
+	#heading{
+	}
+	#main-content{
+		#imageArea{
+			width: 100%;
+			padding-left: 30px;
+			padding-right: 10px;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		#infoArea{
+			#info-heading{
+				border-bottom: 1px solid $Gray300;
+				margin-bottom: 1em;
+				.s_no{
+					font-size: 10pt;
+					margin-bottom: 0.5em; }
+				.name_ja{
+					margin-top: 0;
+					font-size: 14pt;
+					font-weight: bold;
+				}
+			}
+			#properties{
+				#propaties-heading{
+					h5{ color: $Gray700; }
+				}
+				.property{
+					margin-bottom: 0.5em;
+					.value{
+						h4{ font-size: 12pt; margin: 0; }
+						p{ font-size: 12pt; line-height: 1em; }
+					}
+				}
+				.relations{
+					.relation{
+						position: relative;
+						width: 50px;
+						height: 50px;
+						border: 1px solid $Gray300;
+						&.more{
+							line-height: 50px;
+							font-size: 10pt;
+							padding-left: 5px;
+							background-color: $Gray200;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#sub-content{
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		#documents-nav{
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+.stateBtn{
+	height: 100%;
+	margin: 0 5px;
+	padding: 1em 3em;
+	color: $Gray900;
+	background-color: $Gray50;
+	border-radius: 8px 8px 0 0;
+	border: 2px solid $Gray300;
+	font-size: 14pt;
+	outline: none;
+
+	&:hover{
+		background-color: $Gray200;
+	}
+	&.active{
+		background-color: $Gray400;
+	}
+}

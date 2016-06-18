@@ -1,0 +1,156 @@
+/*---------------------------------------------
+ * Mixin
+ *---------------------------------------------*/
+#upload #dropArea {
+  width: 100%;
+  min-height: 500px;
+  padding: 24px;
+  border: 2px dotted #E0E0E0; }
+  #upload #dropArea .fileupload_title {
+    margin-bottom: 24px;
+    font-size: 18pt;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    color: #00838F; }
+    #upload #dropArea .fileupload_title span {
+      font-weight: normal;
+      color: #616161; }
+  #upload #dropArea #upfiles {
+    margin: 12pt 0;
+    cursor: pointer; }
+    #upload #dropArea #upfiles h5 {
+      font-size: 10pt;
+      font-weight: bold;
+      color: #424242; }
+    #upload #dropArea #upfiles .upfile {
+      position: relative; }
+      #upload #dropArea #upfiles .upfile .spacer {
+        width: 100%;
+        padding-bottom: 100%; }
+      #upload #dropArea #upfiles .upfile .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+        background-color: #F5F5F5; }
+        #upload #dropArea #upfiles .upfile .content img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: auto;
+          width: 100%;
+          min-height: 100%;
+          min-width: 100%; }
+          #upload #dropArea #upfiles .upfile .content img.uploading {
+            opacity: 0.5; }
+        #upload #dropArea #upfiles .upfile .content div {
+          width: 100%;
+          height: 100%; }
+          #upload #dropArea #upfiles .upfile .content div .uploading {
+            margin: 0 auto; }
+      #upload #dropArea #upfiles .upfile.fileChooser .input-file {
+        display: table;
+        width: 100%;
+        height: 100%; }
+        #upload #dropArea #upfiles .upfile.fileChooser .input-file p {
+          display: table-cell;
+          vertical-align: middle;
+          font-size: 24px;
+          text-align: center;
+          color: #616161; }
+        #upload #dropArea #upfiles .upfile.fileChooser .input-file input {
+          display: none; }
+      #upload #dropArea #upfiles .upfile.fileChooser:hover {
+        cursor: pointer; }
+        #upload #dropArea #upfiles .upfile.fileChooser:hover .content {
+          background-color: #E0F7FA; }
+        #upload #dropArea #upfiles .upfile.fileChooser:hover p {
+          color: #00BCD4; }
+  #upload #dropArea #info-input-area {
+    padding-top: 12px;
+    border-top: 1px solid #E0E0E0; }
+    #upload #dropArea #info-input-area .input-row {
+      margin-bottom: 12px; }
+    #upload #dropArea #info-input-area h4 {
+      margin: 0;
+      font-size: 10pt;
+      font-weight: bold;
+      color: #757575; }
+    #upload #dropArea #info-input-area #input-description {
+      width: 100%;
+      border: 1px solid #fff;
+      background-color: #fff;
+      resize: none; }
+      #upload #dropArea #info-input-area #input-description:focus {
+        outline: none;
+        border: 1px solid #00BCD4; }
+    #upload #dropArea #info-input-area .category-chip {
+      border-radius: 5px;
+      background-color: #ECEFF1;
+      font-size: 11pt;
+      height: 1.8em;
+      color: #424242;
+      padding: 0.2em 1em;
+      cursor: default; }
+    #upload #dropArea #info-input-area .md-chips {
+      box-shadow: none;
+      margin: 0;
+      padding: 0;
+      line-height: 1em; }
+      #upload #dropArea #info-input-area .md-chips .md-chip-input-container {
+        margin: 0; }
+      #upload #dropArea #info-input-area .md-chips .md-chip {
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        -ms-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+        margin-top: 0;
+        border-radius: 3px;
+        background-color: #ECEFF1;
+        font-size: 11pt;
+        height: 1.8em;
+        cursor: pointer;
+        outline: none;
+        cursor: default; }
+        #upload #dropArea #info-input-area .md-chips .md-chip md-chip-template.ng-binding {
+          position: relative;
+          top: -3px;
+          outline: none;
+          cursor: default; }
+        #upload #dropArea #info-input-area .md-chips .md-chip .ng-isolate-scope {
+          position: relative;
+          left: 12px;
+          top: 5px;
+          cursor: pointer; }
+          #upload #dropArea #info-input-area .md-chips .md-chip .ng-isolate-scope:hover {
+            color: #00838F; }
+  #upload #dropArea #btns {
+    margin-top: 24pt; }
+  #upload #dropArea #submit-btn {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 2em;
+    border-radius: 2pt;
+    border: none;
+    border-bottom: 2px solid #006064;
+    background-color: #0097A7;
+    color: #fff;
+    font-size: 12pt;
+    outline: none;
+    font-weight: 500; }
+    #upload #dropArea #submit-btn:hover {
+      top: 2px;
+      border-bottom: none; }
+  #upload #dropArea #submit-btn[disabled] {
+    top: 2px;
+    border-bottom: none;
+    background-color: #006064;
+    color: #9E9E9E; }
+
+/*# sourceMappingURL=upload.css.map */

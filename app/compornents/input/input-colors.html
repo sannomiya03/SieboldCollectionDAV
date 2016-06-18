@@ -1,0 +1,12 @@
+<div id="colors" layout="column">
+	<p class="label">Color</p>
+	<div layout="row">
+		<md-button
+			class="md-icon-button tint-btn"
+			ng-repeat="color in colorCtrl.colorSelecters"
+			ng-click="colorCtrl.changeSelecterActivity(color)"
+		>
+		<p class="{{color.name}}" ng-class="{active:color.isSelected}"><i ng-show="color.isSelected" class="fa fa-check"></i></p>
+		</md-button>
+	</div>
+</div>

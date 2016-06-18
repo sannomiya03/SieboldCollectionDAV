@@ -1,0 +1,36 @@
+/*---------------------------------------------
+ * Mixin
+ *---------------------------------------------*/
+#searchingArea {
+  margin-bottom: 24px; }
+  #searchingArea #search-base #seachiFormContainer {
+    margin: 0;
+    height: 70px;
+    overflow: hidden;
+    min-height: 0; }
+    #searchingArea #search-base #seachiFormContainer #search-base-label {
+      -webkit-transition: all 0.25s ease;
+      -moz-transition: all 0.25s ease;
+      -ms-transition: all 0.25s ease;
+      -o-transition: all 0.25s ease;
+      transition: all 0.25s ease;
+      margin: 0;
+      padding: 5px 2px;
+      font-weight: bold; }
+    #searchingArea #search-base #seachiFormContainer.md-input-has-value #search-base-label {
+      color: #00838F; }
+    #searchingArea #search-base #seachiFormContainer.md-input-focused #search-base-label {
+      color: #00838F; }
+    #searchingArea #search-base #seachiFormContainer.md-input-focused #seachiForm {
+      border-color: #00ACC1; }
+    #searchingArea #search-base #seachiFormContainer #seachiForm, #searchingArea #search-base #seachiFormContainer #seachiFormPlaceholder {
+      font-size: 14pt;
+      margin-top: 20px;
+      margin-left: 20px;
+      padding: 0;
+      letter-spacing: 0.1px;
+      font-family: 'Lato', Helvetica, 'Hiragino Kaku Gothic Pro', Arial, sans-serif; }
+      #searchingArea #search-base #seachiFormContainer #seachiForm#seachiFormPlaceholder, #searchingArea #search-base #seachiFormContainer #seachiFormPlaceholder#seachiFormPlaceholder {
+        color: #9E9E9E; }
+
+/*# sourceMappingURL=search.css.map */

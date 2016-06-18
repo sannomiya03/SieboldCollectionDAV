@@ -1,0 +1,25 @@
+<div id="terms">
+	<div id="terms-meta" layout="row" layout-align="space-between end">
+
+	</div>
+
+	<div id="term-list" layout="row" layout-wrap>
+		<div
+			id="{{item.id}}"
+			class="item"
+			ng-click="itemCtrl.openModal(item)"
+			ng-repeat="item in itemCtrl.getItems()"
+			flex="10"
+			>
+			<img class="img-responsive" ng-src="{{item.image.trim}}">
+		</div>
+	</div>
+	<div id="loader" ng-show="itemCtrl.showLoader" when-scrolled>
+		<p ng-click="itemCtrl.loadItems()" ng-hide="itemCtrl.loading"></p>
+		<md-progress-circular
+			id="progress"
+			md-diameter="80"
+			ng-show="itemCtrl.loading"
+			></md-progress-circular>
+	</div>
+</div>

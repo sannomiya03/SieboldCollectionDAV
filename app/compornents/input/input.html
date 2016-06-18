@@ -1,0 +1,18 @@
+<div id="searchingArea">
+	<div layout="column" layout-gt-sm="row">
+		<div id="search-base" layout="row">
+			<md-select ng-model="searchCtrl.ItemState.select" id="select">
+				<md-option ng-repeat="target in searchCtrl.targets" value="{{target}}">{{target}}</md-option>
+			</md-select>
+			<md-input-container id="seachiFormContainer" md-no-float class="md-block">
+				<input
+					id="seachiForm"
+					ng-model="searchCtrl.ItemState.input_val"
+					type="text"
+					placeholder="検索"
+					ng-keydown="searchCtrl.keydown($event)"
+					ng-keypress="searchCtrl.keypress()">
+			</md-input-container>
+		</div>
+	</div>
+</div>

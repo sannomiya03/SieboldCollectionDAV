@@ -1,0 +1,20 @@
+<div class="item-advanced" layout="row" layout-align="end center">
+	<md-button
+		class="trash-btn md-icon-button"
+		ng-show="(modalCtrl.editting && modal.item.resource=='local')"
+		ng-click="modalCtrl.deleteItem(modal.item)">
+		<span class="glyphicon glyphicon-trash"></span>
+	</md-button>
+	<md-button
+		class="favorit-btn md-icon-button"
+		ng-click="modalCtrl.favorite(modal.item)">
+		<i ng-show="modal.item.favorite" class="fa fa-heart active"></i>
+		<i ng-show="!modal.item.favorite" class="fa fa-heart-o"></i>
+	</md-button>
+	<md-button
+		class="edit-btn md-icon-button"
+		ng-click="modalCtrl.changeEditMode()">
+		<span ng-show="modalCtrl.editting" class="glyphicon glyphicon-edit active"></span>
+		<span ng-show="!modalCtrl.editting" class="glyphicon glyphicon-edit"></span>
+	</md-button>
+</div>

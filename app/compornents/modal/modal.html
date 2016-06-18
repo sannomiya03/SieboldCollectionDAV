@@ -1,0 +1,51 @@
+<section class="row">
+	<div
+		id="modal-background"
+		ng-click="modalCtrl.closeModal()"></div>
+	<div
+		id="modal-pager"
+		ng-show="modalCtrl.getShowModal()"
+		layout="row"
+		layout-align="space-between center">
+		<md-button
+			id="pager-prev"
+			ng-class="{active: modalCtrl.existPrevItem()}"
+			ng-click="modalCtrl.addModal_toLeft()"
+			ng-disabled="!modalCtrl.existPrevItem()">
+			<span class="icon glyphicon glyphicon-menu-left"></span>
+		</md-button>
+		<md-button
+			id="pager-next"
+			ng-class="{active: modalCtrl.existNextItem()}"
+			ng-click="modalCtrl.addModal_toRight()"
+			ng-disabled="!modalCtrl.existNextItem()">
+			<span class="icon glyphicon glyphicon-menu-right"></span>
+		</md-button>
+	</div>
+
+	<div id="modals"
+		ng-class="{
+			'modalOpen': modalCtrl.getModalAnimate()=='open',
+			'modalClose': modalCtrl.getModalAnimate()=='close'}">
+		<div id="{{'modal-'+modal.item.id}}"
+			class="item-modal"
+			ng-repeat="modal in modalCtrl.getModals()">
+			<div class="inner" layout="row">
+				<div class="modal-image" flex="70" layout layout-align="center center">
+					<ins-modal-image></ins-modal-image>
+				</div>
+				<div class="modal-info" flex="30" ng-class="{editting: modalCtrl.editting}">
+					<ins-modal-advanced></ins-modal-advanced>
+					<ins-modal-title></ins-modal-title>
+					<ins-modal-description></ins-modal-description>
+					<ins-modal-categories></ins-modal-categories>
+					<ins-modal-albums></ins-modal-albums>
+					<ins-modal-tags></ins-modal-tags>
+				</div>
+				<div class="modal-close">
+					<md-button ng-click="modalCtrl.closeModal()"><i class="fa fa-times"></i> CLOSE</md-button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

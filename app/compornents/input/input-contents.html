@@ -1,0 +1,12 @@
+<div id="contents" layout="column" flex-offset="5">
+	<p class="label">Serching from</p>
+	<div layout="row">
+		<md-button
+			class="from-btn"
+			ng-repeat="content in contentCtrl.contentSelecters"
+			ng-click="contentCtrl.changeSelecterActivity(content)"
+			ng-class="{active: content.isSelected}" >
+			<p>{{content.name}} <span class="fa fa-check"></span></p>
+		</md-button>
+	</div>
+</div>

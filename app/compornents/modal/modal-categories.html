@@ -1,0 +1,30 @@
+<div class="category" ng-controller="ModalCategoriesController as mCatCtrl">
+	<h4 class="label">Categories</h4>
+	<md-chips
+		class="chips"
+		ng-class="{editting: modalCtrl.editting}"
+		ng-model="modal.item.categories"
+		md-on-add = "modalCtrl.addTerm('Category', $chip, modal.item)"
+		md-on-remove = "modalCtrl.removeTerm('Category', $chip, modal.item)"
+		readonly="!modalCtrl.editting"
+		placeholder="Enter a tag"
+		secondary-placeholder="+Category"
+		md-autocomplete-snap
+		md-transform-chip="mCatCtrl.transformChip($chip)">
+
+		<md-autocomplete
+			md-search-text="mCatCtrl.searchText"
+			md-items="item in mCatCtrl.querySearch(mCatCtrl.items, mCatCtrl.searchText)"
+			md-item-text="item.name"
+			md-min-length="0"
+			placeholder="{{::mCatCtrl.placeholder}}">
+			<span md-highlight-text="mCatCtrl.searchText">{{item.name}}</span>
+		</md-autocomplete>
+
+		<md-chip-template
+			class="chip"
+			ng-click="modalCtrl.chipSelect('Category', $chip)">
+			 {{($chip.name || $chip)}}
+		</md-chip-template>
+	</md-chips>
+</div>

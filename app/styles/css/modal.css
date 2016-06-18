@@ -1,0 +1,190 @@
+/*---------------------------------------------
+ * Mixin
+ *---------------------------------------------*/
+#modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(250, 250, 250, 0.8);
+  display: none; }
+
+#modal-pager #pager-prev,
+#modal-pager #pager-next {
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  position: fixed;
+  top: 5%;
+  min-width: 30px;
+  width: 2.5%;
+  margin: 0;
+  background-color: none;
+  border-radius: 0;
+  opacity: 0; }
+  #modal-pager #pager-prev:hover,
+  #modal-pager #pager-next:hover {
+    cursor: pointer; }
+#modal-pager #pager-prev {
+  left: 0;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, transparent 100%); }
+#modal-pager #pager-next {
+  right: 0;
+  background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: -o-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.4) 100%); }
+#modal-pager #pager-prev.active,
+#modal-pager #pager-next.active {
+  opacity: .2; }
+  #modal-pager #pager-prev.active:hover,
+  #modal-pager #pager-next.active:hover {
+    opacity: 1; }
+
+.item-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background-color: #fff;
+  border-radius: 2px; }
+  .item-modal .inner {
+    width: 100%;
+    height: 100%;
+    margin: 0; }
+    .item-modal .inner .modal-image {
+      position: relative;
+      height: 100%;
+      padding: 0;
+      background-color: #9E9E9E; }
+      .item-modal .inner .modal-image .img-trim {
+        opacity: 0.5; }
+      .item-modal .inner .modal-image .img-trim, .item-modal .inner .modal-image .loader, .item-modal .inner .modal-image .img-full {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+      .item-modal .inner .modal-image .img-full {
+        max-height: 100%; }
+    .item-modal .inner .modal-info {
+      min-height: 100%;
+      padding: 5px 24px;
+      overflow-y: scroll; }
+      .item-modal .inner .modal-info .item-advanced .md-icon-button {
+        z-index: 9999;
+        position: relative;
+        right: -10px;
+        margin: 0; }
+      .item-modal .inner .modal-info .item-advanced .trash-btn {
+        color: #EF9A9A; }
+        .item-modal .inner .modal-info .item-advanced .trash-btn:hover {
+          color: #F44336; }
+      .item-modal .inner .modal-info .item-advanced .favorit-btn:hover {
+        color: #E91E63; }
+      .item-modal .inner .modal-info .item-advanced .favorit-btn .active {
+        color: #E91E63; }
+        .item-modal .inner .modal-info .item-advanced .favorit-btn .active:hover {
+          color: #C2185B; }
+      .item-modal .inner .modal-info .item-advanced .edit-btn:hover {
+        color: #4CAF50; }
+      .item-modal .inner .modal-info .item-advanced .edit-btn .active {
+        color: #4CAF50; }
+        .item-modal .inner .modal-info .item-advanced .edit-btn .active:hover {
+          color: #388E3C; }
+      .item-modal .inner .modal-info .title {
+        width: 100%;
+        position: relative;
+        margin-top: -30px;
+        margin-bottom: 2em; }
+        .item-modal .inner .modal-info .title h2 {
+          margin-top: 0;
+          font-size: 18pt; }
+          .item-modal .inner .modal-info .title h2 small {
+            margin-bottom: 24px;
+            font-size: 10pt;
+            line-height: 3em; }
+          .item-modal .inner .modal-info .title h2 a:hover {
+            color: #2196F3; }
+      .item-modal .inner .modal-info .label {
+        padding: 0;
+        font-size: 9pt;
+        color: #616161;
+        font-weight: bold; }
+      .item-modal .inner .modal-info .md-chips {
+        box-shadow: none;
+        margin: 0;
+        padding: 0; }
+        .item-modal .inner .modal-info .md-chips .md-chip-input-container {
+          margin: 0; }
+        .item-modal .inner .modal-info .md-chips .md-chip {
+          -webkit-transition: all 0.25s ease;
+          -moz-transition: all 0.25s ease;
+          -ms-transition: all 0.25s ease;
+          -o-transition: all 0.25s ease;
+          transition: all 0.25s ease;
+          margin-top: 0;
+          margin-bottom: 3px;
+          border-radius: 3px;
+          background-color: #ECEFF1;
+          font-size: 11pt;
+          height: 1.8em;
+          cursor: pointer;
+          outline: none; }
+          .item-modal .inner .modal-info .md-chips .md-chip md-chip-template.ng-binding {
+            position: relative;
+            top: -3px;
+            outline: none; }
+          .item-modal .inner .modal-info .md-chips .md-chip .ng-isolate-scope {
+            position: relative;
+            left: 12px;
+            top: 5px;
+            cursor: pointer; }
+            .item-modal .inner .modal-info .md-chips .md-chip .ng-isolate-scope:hover {
+              color: #C62828; }
+          .item-modal .inner .modal-info .md-chips .md-chip:hover {
+            background-color: #00BCD4;
+            color: #fff; }
+          .item-modal .inner .modal-info .md-chips .md-chip md-chip-template.ng-binding.ng-scope {
+            position: relative;
+            top: -2px; }
+      .item-modal .inner .modal-info .editting .md-chips .md-chip {
+        background-color: #fff;
+        border: 1px solid #00BCD4;
+        color: #616161;
+        cursor: default; }
+        .item-modal .inner .modal-info .editting .md-chips .md-chip:hover {
+          background-color: #fff;
+          border: 1px solid #00BCD4;
+          color: #616161; }
+        .item-modal .inner .modal-info .editting .md-chips .md-chip md-chip-template.ng-binding {
+          cursor: default; }
+      .item-modal .inner .modal-info .description,
+      .item-modal .inner .modal-info .category,
+      .item-modal .inner .modal-info .album,
+      .item-modal .inner .modal-info .tag {
+        margin-bottom: 1.8em; }
+    .item-modal .inner .modal-close {
+      position: absolute;
+      top: 0px;
+      left: 0; }
+      .item-modal .inner .modal-close button {
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        -ms-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+        margin: 0;
+        border-radius: 0;
+        opacity: 0.8;
+        background-color: #616161;
+        color: #9E9E9E; }
+        .item-modal .inner .modal-close button:hover {
+          background-color: #E0E0E0;
+          color: #9E9E9E; }
+
+/*# sourceMappingURL=modal.css.map */
