@@ -1,10 +1,11 @@
 (function(){
 	var app = angular.module("c.detailView",[]);
 
-	app.controller("DetailViewController", function( $scope, $rootScope, $routeParams, $http, Items ){
+	app.controller("DetailViewController", function( $scope, $rootScope, $routeParams, $http, Items, Item ){
 		var self = this;
 		self.item = {};
 		self.Items = Items;
+		self.Item = Item;
 
 		$scope.$on('$viewContentLoaded', function(event) {
 			var sid = $routeParams.projectNo.replace("S","");

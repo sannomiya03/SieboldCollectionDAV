@@ -11,7 +11,7 @@
 					>
 					<a ng-href="#/detail/S{{item.s_no}}/{{item.branch_no}}">
 						<p class="label">S{{item.s_no+item.branch_no}}</p>
-						<img ng-src="./../siebold/images/100/SMV-S{{item.s_no+item.branch_no}}/0.jpg">
+						<img ng-src="{{wholeCtrl.Item.getImageURL(item,100)}}">
 					</a>
 				</div>
 			</div>

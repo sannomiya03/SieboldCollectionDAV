@@ -5,7 +5,7 @@
 	</div>
 	<div id="main-content" layout="row">
 		<div id="imageArea" flex="50">
-			<img ng-src="./../siebold/images/800/SMV-S{{detailCtrl.item.s_no+detailCtrl.item.branch_no}}/0.jpg">
+			<img ng-src="./../images/800/SMV-S{{detailCtrl.item.s_no+detailCtrl.item.branch_no}}/0.jpg">
 		</div>
 		<div id="infoArea" flex="50">
 			<div id="info-heading">
@@ -25,7 +25,7 @@
 					<div class="relations" layout="row">
 						<div class="relation item" ng-repeat="relation in detailCtrl.item.relations.document_type">
 							<a ng-href="#/detail/S{{relation.s_no}}/{{relation.branch_no}}">
-								<img ng-src="./../siebold/images/100/SMV-S{{relation.s_no+relation.branch_no}}/0.jpg">
+								<img ng-src="./../images/100/SMV-S{{relation.s_no+relation.branch_no}}/0.jpg">
 							</a>
 						</div>
 						<div class="relation more">・・・</div>
@@ -73,7 +73,7 @@
 						<div class="relations" layout="row">
 							<div class="relation item" ng-repeat="relation in detailCtrl.item.relations.technique">
 								<a ng-href="#/detail/S{{relation.s_no}}/{{relation.branch_no}}">
-									<img ng-src="./../siebold/images/100/SMV-S{{relation.s_no+relation.branch_no}}/0.jpg">
+									<img ng-src="./../images/100/SMV-S{{relation.s_no+relation.branch_no}}/0.jpg">
 								</a>
 							</div>
 							<div class="relation more">・・・</div>
@@ -99,7 +99,7 @@
 				ng-repeat="item in detailCtrl.Items.navItems">
 				<a ng-href="#/detail/S{{item.s_no}}/{{item.branch_no}}">
 					<p class="label">S{{item.s_no+item.branch_no}}</p>
-					<img ng-src="./../siebold/images/100/SMV-S{{item.s_no+item.branch_no}}/0.jpg">
+					<img ng-src="./../images/100/SMV-S{{item.s_no+item.branch_no}}/0.jpg">
 				</a>
 			</li>
 		</ul>
