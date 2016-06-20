@@ -28,7 +28,7 @@
 			self.loading = true;
 			self.queryData.page = 0;
 			self.itemSize = 0;
-			console.log( self.queryData );
+			//console.log( self.queryData );
 			$http({
 				method: 'POST',
 				headers: { 'Content-Type' : 'application/x-www-form-urlencoded;charset=utf-8' },
@@ -37,7 +37,7 @@
 				data: self.queryData,
 			}).success(function(data){
 				console.log("GET > get items, "+data.size+" Results.");
-				console.log(data);
+				//console.log(data);
 				self.itemSize = data.size;
 				self.items = data.items;
 				self.loading = false;
