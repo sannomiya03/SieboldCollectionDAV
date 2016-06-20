@@ -13,7 +13,17 @@
 		function toDetail( item ){
 			console.log( "To Detail Page: S"+item.s_no+"/"+item.branch_no );
 			Item.tracePos( item, $("#dyItem1") );
-			//$location.path("detail/S"+item.s_no+"/"+item.branch_no);
+			$("#dyItem1").animate({
+				width: $(window).width()/3,
+				height: $(window).width()/3,
+				top: 100,
+				left: 100
+			},{
+				duration: 300,
+				complete: function(){
+					$scope.$apply(function(){$location.path("detail/S"+item.s_no+"/"+item.branch_no);});
+				}
+			});
 		}
 	});
 })();
