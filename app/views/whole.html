@@ -8,11 +8,12 @@
 					class="item"
 					ng-repeat="item in wholeCtrl.Items.items"
 					ng-style="{left: wholeCtrl.Item.calcX($index), top: wholeCtrl.Item.calcY($index)}"
+					ng-click="wholeCtrl.toDetail( item )"
 					>
-					<a ng-href="#/detail/S{{item.s_no}}/{{item.branch_no}}">
+					<!--<a ng-href="#/detail/S{{item.s_no}}/{{item.branch_no}}">-->
 						<p class="label">S{{item.s_no+item.branch_no}}</p>
 						<img ng-src="{{wholeCtrl.Item.getImageURL(item,100)}}">
-					</a>
+					<!--</a>-->
 				</div>
 			</div>
 		</div>
