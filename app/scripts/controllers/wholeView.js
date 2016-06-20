@@ -12,7 +12,8 @@
 
 		function toDetail( item ){
 			console.log( "To Detail Page: S"+item.s_no+"/"+item.branch_no );
-			$location.path("detail/S"+item.s_no+"/"+item.branch_no);
+			Item.tracePos( item, $("#dyItem1") );
+			//$location.path("detail/S"+item.s_no+"/"+item.branch_no);
 		}
 	});
 })();

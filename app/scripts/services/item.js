@@ -3,9 +3,22 @@
 
 	services.service("Item", function(){
 		var self = this;
+		self.tracePos = tracePos;
 		self.getImageURL = getImageURL;
 		self.calcX = calcX;
 		self.calcY = calcY;
+
+		function tracePos( item, elm ){
+			var itemElm = $("#"+item.id);
+			console.log(itemElm);
+			console.log(elm);
+			elm.css({
+				width: $(itemElm).width(),
+				height: $(itemElm).height(),
+				left: $(itemElm).offset().left,
+				top: $(itemElm).offset().top
+			});
+		}
 
 		function getImageURL( item, size ){
 			if( item.branch_no === "" ){
