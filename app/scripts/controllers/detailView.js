@@ -1,11 +1,12 @@
 (function(){
 	var app = angular.module("c.detailView",[]);
 
-	app.controller("DetailViewController", function( $scope, $rootScope, $routeParams, $http, Items, Item ){
+	app.controller("DetailViewController", function( $scope, $location, $rootScope, $routeParams, $http, Items, Item ){
 		var self = this;
 		self.item = {};
 		self.Items = Items;
 		self.Item = Item;
+		self.back = back;
 
 		$scope.$on('$viewContentLoaded', function(event) {
 			var sid = $routeParams.projectNo.replace("S","");
@@ -19,12 +20,17 @@
 				params: query
 			}).success(function(data){
 				console.log("GET > get item info, sid:"+sid+", bid:"+bid);
-				console.log(data);
 				self.item = data;
 			});
 			if( Items.navItems.length==0 ){
 				Items.loadNavItems();
 			}
 		});
+
+		function back(){
+			setTimeout(function(){
+				$scope.$apply(function(){ $location.path(""); });
+			}, 50 );
+		}
 	});
 })();

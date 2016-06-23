@@ -1,23 +1,34 @@
 (function(){
 	var services = angular.module("s.item",[]);
 
-	services.service("Item", function(){
+	services.service("Item", function($location){
 		var self = this;
+		self.detailMode = false;
 		self.tracePos = tracePos;
+		self.toDetailAnimation = toDetailAnimation;
 		self.getImageURL = getImageURL;
 		self.calcX = calcX;
 		self.calcY = calcY;
 
 		function tracePos( item, elm ){
 			var itemElm = $("#"+item.id);
-			console.log(itemElm);
-			console.log(elm);
 			elm.css({
 				width: $(itemElm).width(),
 				height: $(itemElm).height(),
 				left: $(itemElm).offset().left,
 				top: $(itemElm).offset().top
 			});
+		}
+
+		function toDetailAnimation( item, elm, func ){
+			self.detailMode = true;
+			console.log(self.detailMode);
+			$(elm).animate({
+				width: $(window).width()/3,
+				height: $(window).width()/3,
+				top: 100,
+				left: 100
+			},300);
 		}
 
 		function getImageURL( item, size ){

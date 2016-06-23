@@ -13,21 +13,15 @@
 	outline: none;
 	&:hover{
 		border: 1px solid $Cyan300;
-	}	//a{
-		//display: block;
-		//width: 100%;
-		//height: 100%;
-
-		p.label{
-			position: absolute;
-			top: 0; left: 0em;
-		}
-
-		img{
-			width: 100%;
-			height: 100%;
-		}
-	//}
+	}
+	p.label{
+		position: absolute;
+		top: 0; left: 0em;
+	}
+	img{
+		width: 100%;
+		height: 100%;
+	}
 }
 
 #documents-nav{
@@ -36,7 +30,6 @@
 		width: 40px; height: 40px;
 		&:hover, &.active{
 			top: -15px;
-			//padding-bottom: 15px;
 		}
 	}
 }
