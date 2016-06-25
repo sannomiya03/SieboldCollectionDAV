@@ -2,9 +2,14 @@
 @import "general";
 @import "mixins";
 @import "vars";
-
+$g_from: 255;
+$g_to: 240;
 html,body{
 	background-color: $White;
+	background: rgb(252,252,252);
+	background: -moz-radial-gradient(center, ellipse cover, rgba($g_from,$g_from,$g_from,1) 0%, rgba($g_to,$g_to,$g_to,1) 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, rgba($g_from,$g_from,$g_from,1) 0%,rgba($g_to,$g_to,$g_to,1) 100%);
+	background: radial-gradient(ellipse at center, rgba($g_from,$g_from,$g_from,1) 0%,rgba($g_to,$g_to,$g_to,1) 100%);
 }
 
 #app{
@@ -21,14 +26,16 @@ html,body{
 		width: 100%;
 		height: 10%;
 		padding: 0 $common-padding-desktop-HD;
+		padding-top: 24px;
 		h1{
 			font-size: 11pt;
+			margin: 0;
 		}
 	}
 	#main-content{
 		width: 100%;
 		height: 80%;
-		overflow: hidden;
+		//overflow: hidden;
 		padding: 10px;
 	}
 	#sub-content{
@@ -47,14 +54,16 @@ html,body{
 	#main-content{
 		#imageArea{
 			width: 100%;
-			padding-left: 30px;
-			padding-right: 10px;
 			img{
 				width: 100%;
 				height: auto;
 			}
 		}
 		#infoArea{
+			position: relative;
+			left: 30px;
+			padding-left: 24px;
+			opacity: 0;
 			#info-heading{
 				border-bottom: 1px solid $Gray300;
 				margin-bottom: 1em;
@@ -129,5 +138,7 @@ html,body{
 
 #backBtn{
 	display: inline-block;
+	position: absolute;
+	top: 50px; left: 40px;
 	outline: none;
 }

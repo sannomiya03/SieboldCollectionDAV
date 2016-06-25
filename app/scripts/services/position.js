@@ -14,12 +14,6 @@
 				y: index % 5 * 100
 			};
 			var view = { x: pos.x, y: pos.y };
-			/*if( Item.detailMode ){
-				if( self.getVisiblity(pos.x) && Item.selectedItemPos!=undefined ){
-					var p1 = Item.selectedItemPos;
-					view = self.calcExplodedPos( p1, pos );
-				}
-			}*/
 			return {
 				x: pos.x,
 				y: pos.y,
@@ -29,7 +23,6 @@
 		}
 
 		function getVisiblity( x ){
-			//var x = getPos( index ).x;
 			if( x < $(window).width() ) return true;
 			return false;
 		}

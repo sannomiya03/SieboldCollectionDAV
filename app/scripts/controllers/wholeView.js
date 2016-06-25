@@ -8,7 +8,6 @@
 		$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
 			var items = $("#items").children(".visible");
 			if( Item.detailMode ){
-				console.log( Item.selectedItem );
 				gather( Item.selectedItem );
 				Item.detailMode = false;
 			}
@@ -69,17 +68,18 @@
 				});
 			}
 			setTimeout(function(){
-				$("#dyItem1").fadeOut(0);
+				$("#dyItem1").fadeOut(250);
 			}, 300);
 		}
 
 		function moveToTile( item ){
 			$("#dyItem1").fadeIn(0);
+			$("#dyItem1").find("img").attr("src",Item.getImageURL(item,800));
 			$("#dyItem1").animate({
-				width: $(window).width()/3,
-				height: $(window).width()/3,
-				top: 100,
-				left: 100
+				width: $(window).width()*0.4-10,
+				height: $(window).width()*0.4-10,
+				top: $(window).height()*0.1+10,
+				left: $(window).width()*0.1+10-1
 			},{
 				duration: 300,
 				complete: function(){

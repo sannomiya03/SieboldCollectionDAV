@@ -26,21 +26,34 @@
 				Items.loadNavItems();
 			}
 		});
+		$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+			$("#dyItem1").fadeOut(100);
+			$("#infoArea").css("left",-20);
+			$("#infoArea").animate({
+				"opacity": 1,
+				left: 0
+			}, 500);
+		});
 
 		function back(){
 			var index = Items.getIndex( Items.items, Item.selectedItem );
 			if( Item.detailMode ){
+				$("#imageArea").css("opacity",0);
+				$("#infoArea").animate({
+					"opacity": 0,
+					left: -30
+				}, 200);
 				$("#dyItem1").fadeIn(0);
 				$("#dyItem1").animate({
-					width: 100,
-					height: 100,
-					left: Position.getPos(index).x + 10,
-					top: Position.getPos(index).y + $(window).height()*0.1 + 10
+					width: 99, //borderが1pxあるため
+					height: 99,
+					left: Position.getPos(index).x + 10 + 1,
+					top: Position.getPos(index).y + $(window).height()*0.1 + 10 + 1
 				}, 300);
 			}
 			setTimeout(function(){
 				$scope.$apply(function(){ $location.path(""); });
-			}, 100 );
+			}, 200 );
 		}
 	});
 })();

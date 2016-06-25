@@ -61,7 +61,11 @@ a {
  * Mixin
  *---------------------------------------------*/
 html, body {
-  background-color: #fff; }
+  background-color: #fff;
+  background: #fcfcfc;
+  background: -moz-radial-gradient(center, ellipse cover, white 0%, #f0f0f0 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, white 0%, #f0f0f0 100%);
+  background: radial-gradient(ellipse at center, white 0%, #f0f0f0 100%); }
 
 #app {
   height: 100%;
@@ -73,13 +77,14 @@ html, body {
   #app #heading {
     width: 100%;
     height: 10%;
-    padding: 0 40px; }
+    padding: 0 40px;
+    padding-top: 24px; }
     #app #heading h1 {
-      font-size: 11pt; }
+      font-size: 11pt;
+      margin: 0; }
   #app #main-content {
     width: 100%;
     height: 80%;
-    overflow: hidden;
     padding: 10px; }
   #app #sub-content {
     width: 100%;
@@ -87,42 +92,45 @@ html, body {
     padding: 0 40px; }
 
 #detail #main-content #imageArea {
-  width: 100%;
-  padding-left: 30px;
-  padding-right: 10px; }
+  width: 100%; }
   #detail #main-content #imageArea img {
     width: 100%;
     height: auto; }
-#detail #main-content #infoArea #info-heading {
-  border-bottom: 1px solid #E0E0E0;
-  margin-bottom: 1em; }
-  #detail #main-content #infoArea #info-heading .s_no {
-    font-size: 10pt;
-    margin-bottom: 0.5em; }
-  #detail #main-content #infoArea #info-heading .name_ja {
-    margin-top: 0;
-    font-size: 14pt;
-    font-weight: bold; }
-#detail #main-content #infoArea #properties #propaties-heading h5 {
-  color: #616161; }
-#detail #main-content #infoArea #properties .property {
-  margin-bottom: 0.5em; }
-  #detail #main-content #infoArea #properties .property .value h4 {
-    font-size: 12pt;
-    margin: 0; }
-  #detail #main-content #infoArea #properties .property .value p {
-    font-size: 12pt;
-    line-height: 1em; }
-#detail #main-content #infoArea #properties .relations .relation {
+#detail #main-content #infoArea {
   position: relative;
-  width: 50px;
-  height: 50px;
-  border: 1px solid #E0E0E0; }
-  #detail #main-content #infoArea #properties .relations .relation.more {
-    line-height: 50px;
-    font-size: 10pt;
-    padding-left: 5px;
-    background-color: #EEEEEE; }
+  left: 30px;
+  padding-left: 24px;
+  opacity: 0; }
+  #detail #main-content #infoArea #info-heading {
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 1em; }
+    #detail #main-content #infoArea #info-heading .s_no {
+      font-size: 10pt;
+      margin-bottom: 0.5em; }
+    #detail #main-content #infoArea #info-heading .name_ja {
+      margin-top: 0;
+      font-size: 14pt;
+      font-weight: bold; }
+  #detail #main-content #infoArea #properties #propaties-heading h5 {
+    color: #616161; }
+  #detail #main-content #infoArea #properties .property {
+    margin-bottom: 0.5em; }
+    #detail #main-content #infoArea #properties .property .value h4 {
+      font-size: 12pt;
+      margin: 0; }
+    #detail #main-content #infoArea #properties .property .value p {
+      font-size: 12pt;
+      line-height: 1em; }
+  #detail #main-content #infoArea #properties .relations .relation {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #E0E0E0; }
+    #detail #main-content #infoArea #properties .relations .relation.more {
+      line-height: 50px;
+      font-size: 10pt;
+      padding-left: 5px;
+      background-color: #EEEEEE; }
 #detail #sub-content {
   position: absolute;
   bottom: 0;
@@ -149,6 +157,9 @@ html, body {
 
 #backBtn {
   display: inline-block;
+  position: absolute;
+  top: 50px;
+  left: 40px;
   outline: none; }
 
 /*# sourceMappingURL=main.css.map */

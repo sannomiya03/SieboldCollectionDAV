@@ -1,13 +1,13 @@
 <div id="detail">
 	<div id="heading">
-		<h1>SIEBOLD COLLECTION</h1>
+		<h1 id="logo">SIEBOLD COLLECTION</h1>
 		<p id="backBtn" ng-click="detailCtrl.back()">もどる</p>
 	</div>
-	<div id="main-content" layout="row">
-		<div id="imageArea" flex="50">
+	<div id="main-content" layout="row" layout-align="center">
+		<div id="imageArea" flex="40">
 			<img ng-src="./../images/800/SMV-S{{detailCtrl.Item.selectedItem.s_no+detailCtrl.Item.selectedItem.branch_no}}/0.jpg">
 		</div>
-		<div id="infoArea" flex="50">
+		<div id="infoArea" flex="40">
 			<div id="info-heading">
 				<h3 class="s_no">資料番号　S{{detailCtrl.Item.selectedItem.s_no}}</h3>
 				<h2 class="name_ja">{{detailCtrl.Item.selectedItem.title_ja}}</h2>
@@ -96,6 +96,7 @@
 		<ul id="documents-nav" layout="row">
 			<li
 				class="item nav"
+				on-finish-render="ngRepeatFinished"
 				ng-repeat="item in detailCtrl.Items.navItems">
 				<a ng-href="#/detail/S{{item.s_no}}/{{item.branch_no}}">
 					<p class="label">S{{item.s_no+item.branch_no}}</p>
