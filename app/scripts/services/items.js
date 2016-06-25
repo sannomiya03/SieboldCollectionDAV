@@ -9,6 +9,7 @@
 		self.init = init;
 		self.loaderActive = true;
 		self.loading = false;
+		self.getIndex = getIndex;
 
 		self.queryData = {
 			page: 0,
@@ -73,6 +74,15 @@
 				self.navItems = data.items;
 				console.log("GET > nav items");
 			});
+		}
+
+		function getIndex( items, item ){
+			for( var i=0; i<items.length; i++ ){
+				if( items[i].id == item.id ){
+					return i;
+				}
+			}
+			return -1;
 		}
 	});
 })();

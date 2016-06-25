@@ -1,9 +1,8 @@
 (function(){
 	var app = angular.module("c.detailView",[]);
 
-	app.controller("DetailViewController", function( $scope, $location, $rootScope, $routeParams, $http, Items, Item ){
+	app.controller("DetailViewController", function( $scope, $location, $rootScope, $routeParams, $http, Items, Item, Position ){
 		var self = this;
-		self.item = {};
 		self.Items = Items;
 		self.Item = Item;
 		self.back = back;
@@ -19,7 +18,9 @@
 				params: query
 			}).success(function(data){
 				console.log("GET > get item info, sid:"+sid+", bid:"+bid);
-				self.item = data;
+				Item.selectedItem = data;
+				Item.selectedItemPos = Position.getPos( Items.getIndex(Items.items,Item.selectedItem) );
+				//ロード時Items.itemsが空になっているバグあり
 			});
 			if( Items.navItems.length == 0 ){
 				Items.loadNavItems();
@@ -27,28 +28,19 @@
 		});
 
 		function back(){
-			var index = getItemIndex( Items.items, self.item );
-			console.log( index );
+			var index = Items.getIndex( Items.items, Item.selectedItem );
 			if( Item.detailMode ){
+				$("#dyItem1").fadeIn(0);
 				$("#dyItem1").animate({
 					width: 100,
 					height: 100,
-					top: Item.targets.y,
-					left: Item.targets.x
+					left: Position.getPos(index).x + 10,
+					top: Position.getPos(index).y + $(window).height()*0.1 + 10
 				}, 300);
 			}
 			setTimeout(function(){
 				$scope.$apply(function(){ $location.path(""); });
 			}, 100 );
-		}
-
-		function getItemIndex( items, item ){
-			for( var i=0; i<items.length; i++ ){
-				if( items[i].id == item.id ){
-					return i;
-				}
-			}
-			return -1;
 		}
 	});
 })();

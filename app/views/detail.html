@@ -1,16 +1,16 @@
 <div id="detail">
 	<div id="heading">
 		<h1>SIEBOLD COLLECTION</h1>
-		<p ng-click="detailCtrl.back()">もどる</p>
+		<p id="backBtn" ng-click="detailCtrl.back()">もどる</p>
 	</div>
 	<div id="main-content" layout="row">
 		<div id="imageArea" flex="50">
-			<img ng-src="./../images/800/SMV-S{{detailCtrl.item.s_no+detailCtrl.item.branch_no}}/0.jpg">
+			<img ng-src="./../images/800/SMV-S{{detailCtrl.Item.selectedItem.s_no+detailCtrl.Item.selectedItem.branch_no}}/0.jpg">
 		</div>
 		<div id="infoArea" flex="50">
 			<div id="info-heading">
-				<h3 class="s_no">資料番号　S{{detailCtrl.item.s_no}}</h3>
-				<h2 class="name_ja">{{detailCtrl.item.title_ja}}</h2>
+				<h3 class="s_no">資料番号　S{{detailCtrl.Item.selectedItem.s_no}}</h3>
+				<h2 class="name_ja">{{detailCtrl.Item.selectedItem.title_ja}}</h2>
 			</div>
 			<div id="properties" layout="column">
 				<div id="propaties-heading" layout="row">
@@ -20,10 +20,10 @@
 				<div class="property" layout="row">
 					<div class="value" flex="50" layout="row" layout-aling="space-between">
 						<h4 flex="30">資料種別</h4>
-						<p ng-repeat="type in detailCtrl.item.document_type">{{type.name}}</p>
+						<p ng-repeat="type in detailCtrl.Item.selectedItem.document_type">{{type.name}}</p>
 					</div>
 					<div class="relations" layout="row">
-						<div class="relation item" ng-repeat="relation in detailCtrl.item.relations.document_type">
+						<div class="relation item" ng-repeat="relation in detailCtrl.Item.selectedItem.relations.document_type">
 							<a ng-href="#/detail/S{{relation.s_no}}/{{relation.branch_no}}">
 								<img ng-src="./../images/100/SMV-S{{relation.s_no+relation.branch_no}}/0.jpg">
 							</a>
@@ -59,7 +59,7 @@
 				<div class="property" layout="row">
 					<div class="value" flex="50" layout="row" layout-aling="space-between">
 						<h4 flex="30">材質</h4>
-						<p ng-repeat="type in detailCtrl.item.material">{{type.name}}</p>
+						<p ng-repeat="type in detailCtrl.Item.selectedItem.material">{{type.name}}</p>
 					</div>
 					<div class="relations" layout="row">
 					</div>
@@ -67,11 +67,11 @@
 				<div class="property" layout="row">
 					<div class="value" flex="50" layout="row" layout-aling="space-between">
 						<h4 flex="30">技法</h4>
-						<p ng-repeat="type in detailCtrl.item.technique">{{type.name}}</p>
+						<p ng-repeat="type in detailCtrl.Item.selectedItem.technique">{{type.name}}</p>
 					</div>
 					<div class="relations" layout="row">
 						<div class="relations" layout="row">
-							<div class="relation item" ng-repeat="relation in detailCtrl.item.relations.technique">
+							<div class="relation item" ng-repeat="relation in detailCtrl.Item.selectedItem.relations.technique">
 								<a ng-href="#/detail/S{{relation.s_no}}/{{relation.branch_no}}">
 									<img ng-src="./../images/100/SMV-S{{relation.s_no+relation.branch_no}}/0.jpg">
 								</a>
@@ -83,7 +83,7 @@
 				<div class="property" layout="row">
 					<div class="value" flex="50" layout="row" layout-aling="space-between">
 						<h4 flex="30">文様</h4>
-						<p ng-repeat="type in detailCtrl.item.pattern">{{type.name}}</p>
+						<p ng-repeat="type in detailCtrl.Item.selectedItem.pattern">{{type.name}}</p>
 					</div>
 					<div class="relations" layout="row">
 

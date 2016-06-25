@@ -74,6 +74,8 @@ html, body {
     width: 100%;
     height: 10%;
     padding: 0 40px; }
+    #app #heading h1 {
+      font-size: 11pt; }
   #app #main-content {
     width: 100%;
     height: 80%;
@@ -144,5 +146,9 @@ html, body {
     background-color: #EEEEEE; }
   .stateBtn.active {
     background-color: #BDBDBD; }
+
+#backBtn {
+  display: inline-block;
+  outline: none; }
 
 /*# sourceMappingURL=main.css.map */
