@@ -10,11 +10,11 @@
 	$s_no = $_GET["sid"];
 	$branch_no = $_GET["bid"];
 
-	if( $branch_id == "" ){
-		$document = getRecord( $pdo, "documents", "where s_no='$s_no'" );
-	}else{
-		$document = getRecord( $pdo, "documents", "where s_no='$s_no' AND branch_no='$branch_no'" );
-	}
+	//if( $branch_id == "" ){
+	//	$document = getRecord( $pdo, "documents", "where s_no='$s_no'" );
+	//}else{
+	$document = getRecord( $pdo, "documents", "where s_no='$s_no' AND branch_no='$branch_no'" );
+	//}
 	$item = array(
 		"id"=>$document["document_id"],
 		"title_ja"=>$document["title_ja"],

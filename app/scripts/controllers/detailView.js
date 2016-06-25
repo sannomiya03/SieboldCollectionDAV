@@ -18,6 +18,7 @@
 				params: query
 			}).success(function(data){
 				console.log("GET > get item info, sid:"+sid+", bid:"+bid);
+				console.log(data);
 				Item.selectedItem = data;
 				Item.selectedItemPos = Position.getPos( Items.getIndex(Items.items,Item.selectedItem) );
 				//ロード時Items.itemsが空になっているバグあり
@@ -37,6 +38,7 @@
 
 		function back(){
 			var index = Items.getIndex( Items.items, Item.selectedItem );
+			console.log(Item.selectedItem);
 			if( Item.detailMode ){
 				$("#imageArea").css("opacity",0);
 				$("#infoArea").animate({

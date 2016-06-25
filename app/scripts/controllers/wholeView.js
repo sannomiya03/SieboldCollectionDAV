@@ -22,19 +22,18 @@
 			console.log( "To Detail Page: S"+item.s_no+"/"+item.branch_no );
 			Position.tracePos( item, $("#dyItem1") );
 			Item.detailMode = true;
-			$("#"+item.id).css("opacity",0);
-			explode( item );
-			moveToTile( item );
+			Item.getItemElm(item).css("opacity",0);
+			explode(item);
+			moveToTile(item);
 		}
 
 		function explode( item ){
 			var items = $("#items").children(".visible");
-			var p1 = { x: $("#"+item.id).offset().left, y: $("#"+item.id).offset().top };
+			var p1 = { x: Item.getItemElm(item).offset().left, y: Item.getItemElm(item).offset().top };
 			for( var i=0; i<items.length; i++ ){
-				var itemElm =  $("#"+items[i].id);
-				var p2 = { x: $(itemElm).offset().left, y: $(itemElm).offset().top };
+				var p2 = { x: $(items[i]).offset().left, y: $(items[i]).offset().top };
 				var explodedPos = Position.calcExplodedPos( p1, p2 );
-				$(itemElm).animate({
+				$(items[i]).animate({
 					left: explodedPos.x - 10,
 					top:  explodedPos.y - 100,
 					"opacity": 0
@@ -50,15 +49,14 @@
 			var index = Items.getIndex(Items.items,item);
 			var p1 = { x: Position.getPos(index).x, y: Position.getPos(index).y };
 			for( var i=0; i<items.length; i++ ){
-				var itemElm =  $("#"+items[i].id);
-				var p2 = { x: $(itemElm).offset().left, y: $(itemElm).offset().top };
+				var p2 = { x: $(items[i]).offset().left, y: $(items[i]).offset().top };
 				var explodedPos = Position.calcExplodedPos( p1, p2 );
-				$(itemElm).css({
+				$(items[i]).css({
 					left: explodedPos.x - 10,
 					top:  explodedPos.y - 100,
 					"opacity": 0
 				});
-				$(itemElm).animate({
+				$(items[i]).animate({
 					left: p2.x-10,
 					top:  p2.y-100+10,
 					"opacity": 1

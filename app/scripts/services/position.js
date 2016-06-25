@@ -28,7 +28,7 @@
 		}
 
 		function tracePos( item, elm ){
-			var itemElm = $("#"+item.id);
+			var itemElm = Item.getItemElm(item);
 			elm.css({
 				width: $(itemElm).width(),
 				height: $(itemElm).height(),

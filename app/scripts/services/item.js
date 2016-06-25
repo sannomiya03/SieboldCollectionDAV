@@ -4,8 +4,9 @@
 	services.service("Item", function($location){
 		var self = this;
 		self.detailMode = false;
-		self.getImageURL = getImageURL;
 		self.selectedItem = {};
+		self.getImageURL = getImageURL;
+		self.getItemElm = getItemElm;
 
 		function getImageURL( item, size ){
 			if( item.branch_no === "" ){
@@ -13,6 +14,10 @@
 			}else{
 				return "./../images/"+size+"/SMV-S"+item.s_no+"_"+item.branch_no+"/0.jpg";
 			}
+		}
+
+		function getItemElm( item ){
+			return $("#"+item.id);
 		}
 	});
 })();
