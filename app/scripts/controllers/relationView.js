@@ -1,7 +1,7 @@
 (function(){
 	var app = angular.module("c.relationView",[]);
 
-	app.controller("RelationViewController", function( $scope, Items, ModalState ){
+	app.controller("RelationViewController", function( $scope, Items ){
 		var self = this;
 		self.Items = Items;
 

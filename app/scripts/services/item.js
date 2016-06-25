@@ -9,6 +9,7 @@
 		self.getImageURL = getImageURL;
 		self.calcX = calcX;
 		self.calcY = calcY;
+		self.targets = { x:0, y: 0 };
 
 		function tracePos( item, elm ){
 			var itemElm = $("#"+item.id);

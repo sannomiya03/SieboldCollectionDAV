@@ -1,3 +1,3 @@
 (function(){
-	var services = angular.module("services",["s.items", "s.item", "s.modal","s.layoutState"]);
+	var services = angular.module("services",["s.items", "s.item", "s.layoutState", "s.position"]);
 })();

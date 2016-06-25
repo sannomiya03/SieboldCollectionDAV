@@ -1,7 +1,7 @@
 (function(){
-	var app = angular.module("controllers",["c.wholeView", "c.detailView", "c.relationView","c.layoutController"]);
+	var app = angular.module("controllers",["c.wholeView", "c.detailView", "c.relationView", "c.layoutController"]);
 
-	app.controller("MainController", function( $scope, Items, ModalState ){
+	app.controller("MainController", function( $scope, Items ){
 		var self = this;
 		self.instansExist=false;
 		self.Items = Items;
